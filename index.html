@@ -42,9 +42,11 @@
     .a{display:block;padding:10px 14px;color:var(--muted);font-size:14px}
 
     /* password area */
-    .pw-area{margin-top:20px;display:flex;gap:12px;align-items:center}
-    input[type="password"]{padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf4ff;min-width:260px;font-size:15px}
+    .pw-area{margin-top:20px;display:flex;gap:8px;align-items:center}
+    .pw-wrapper{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.01);padding:6px;border-radius:10px}
+    input[type="password"], input[type="text"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf4ff;min-width:220px;font-size:15px}
     .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#08101a;font-weight:700;cursor:pointer}
+    .toggle-btn{background:transparent;border:0;color:var(--muted);padding:6px;border-radius:6px;cursor:pointer}
 
     .invite{margin-top:12px;display:none;align-items:center;gap:8px}
     .linkbox{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:#dbe9ff;display:inline-block}
@@ -101,10 +103,16 @@
         <p>Donut Club is a private Discord community focused on software, apps, game discussion and friendly help. To get the invite link you must obtain the password by DMing <strong>wen05275</strong> on Discord, then enter it below.</p>
 
         <div class="pw-area" style="margin-top:16px">
-          <label for="pw" style="position:absolute;left:-9999px">Password</label>
-          <input id="pw" type="password" placeholder="Enter password here" aria-label="password input" />
-          <button id="check" class="btn">Enter</button>
-          <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
+          <div class="pw-wrapper">
+            <label for="pw" style="position:absolute;left:-9999px">Password</label>
+            <input id="pw" type="password" placeholder="Enter password here" aria-label="password input" autocomplete="off" />
+            <button id="togglePw" class="toggle-btn" aria-pressed="false" title="Show password">👁️</button>
+            <button id="check" class="btn">Enter</button>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">Tip: click the eye to show what you type in the password field.</div>
+          </div>
         </div>
 
         <div id="msg" style="margin-top:12px;color:var(--muted);font-weight:600"></div>
@@ -174,7 +182,7 @@
 
   <script>
     (function(){
-      // Simplified: no editing, FAQ answers visible by default
+      // Show/hide password toggle + password invite logic
       const CORRECT = 'cheese';
       const pw = document.getElementById('pw');
       const check = document.getElementById('check');
@@ -182,8 +190,19 @@
       const msg = document.getElementById('msg');
       const linkbox = document.getElementById('linkbox');
       const copyBtn = document.getElementById('copy');
+      const toggle = document.getElementById('togglePw');
 
       function showMessage(t, color){ msg.textContent = t; msg.style.color = color || '#a5f3fc'; }
+
+      // Toggle visibility of typed password
+      toggle.addEventListener('click', ()=>{
+        const isText = pw.type === 'text';
+        pw.type = isText ? 'password' : 'text';
+        toggle.setAttribute('aria-pressed', (!isText).toString());
+        toggle.title = isText ? 'Show password' : 'Hide password';
+        toggle.textContent = isText ? '👁️' : '🙈';
+      });
+
       function unlock(){ reveal.style.display = 'flex'; showMessage('Access granted — invite ready to copy.'); }
 
       check.addEventListener('click', ()=>{
@@ -199,8 +218,8 @@
         try{ await navigator.clipboard.writeText(linkbox.textContent.trim()); showMessage('Invite copied to clipboard!'); }
         catch(err){ const range = document.createRange(); range.selectNodeContents(linkbox); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); try{ document.execCommand('copy'); showMessage('Invite copied to clipboard!'); }catch(e){ showMessage('Could not copy automatically — select the link and copy manually.','orange'); } }
 
-      // Make sure the invite link is absolute and works when pasted into browser address bar.
-      // The linkbox already contains the full GitHub Pages URL.
+      // Ensure link is absolute so pasting into the URL bar works
+      // The link is already a full GitHub Pages URL.
 
     })();
   </script>
