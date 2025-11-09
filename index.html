@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,13 +36,11 @@
     .card h4{margin:0 0 10px 0;color:var(--accent)}
     .card p{margin:0;color:var(--muted);line-height:1.45}
 
-    /* FAQ accordion */
     .faq{margin-top:18px}
     .q{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px;margin-bottom:8px}
     .q h5{margin:0;font-size:15px}
     .a{display:block;padding:10px 14px;color:var(--muted);font-size:14px}
 
-    /* password area */
     .pw-area{margin-top:20px;display:flex;gap:8px;align-items:center}
     .pw-wrapper{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.01);padding:6px;border-radius:10px}
     input[type="password"], input[type="text"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf4ff;min-width:220px;font-size:15px}
@@ -51,7 +50,6 @@
     .invite{margin-top:12px;display:none;align-items:center;gap:8px}
     .linkbox{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:#dbe9ff;display:inline-block}
 
-    /* right panel extras */
     .right h4{color:var(--accent)}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);margin:6px 6px 6px 0;font-weight:700}
 
@@ -77,7 +75,7 @@
   </header>
 
   <div class="layout">
-    <aside class="sidebar" id="channels" aria-label="Available channels">
+    <aside class="sidebar" id="channels">
       <h3>Available channels</h3>
       <ul class="channels">
         <li>hacking-and-programming-server <span>Code help, projects, dev chat</span></li>
@@ -93,135 +91,67 @@
         <li>How to have more storage in your devices <span>Storage tips & tools</span></li>
         <li>ETC... <span>More topics added by request</span></li>
       </ul>
-      <hr style="margin-top:12px;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-      <p style="font-size:13px;color:var(--muted);margin-top:12px">Want a channel added? DM <strong>wen05275</strong> on Discord.</p>
     </aside>
 
     <main>
       <section class="hero">
         <div class="h1">Welcome to Donut Club</div>
-        <p>Donut Club is a private Discord community focused on software, apps, game discussion and friendly help. To get the invite link you must obtain the password by DMing <strong>wen05275</strong> on Discord, then enter it below.</p>
+        <p>To get the invite link, enter the password below (you can get it by DMing <strong>wen05275</strong> on Discord).</p>
 
-        <div class="pw-area" style="margin-top:16px">
+        <div class="pw-area">
           <div class="pw-wrapper">
-            <label for="pw" style="position:absolute;left:-9999px">Password</label>
-            <input id="pw" type="password" placeholder="Enter password here" aria-label="password input" autocomplete="off" />
-            <button id="togglePw" class="toggle-btn" aria-pressed="false" title="Show password">👁️</button>
+            <input id="pw" type="password" placeholder="Enter password here" autocomplete="off" />
+            <button id="togglePw" class="toggle-btn" title="Show password">👁️</button>
             <button id="check" class="btn">Enter</button>
           </div>
-          <div style="display:flex;flex-direction:column">
-            <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
-            <div style="font-size:12px;color:var(--muted);margin-top:8px">Tip: click the eye to show what you type in the password field.</div>
-          </div>
+          <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
         </div>
-
         <div id="msg" style="margin-top:12px;color:var(--muted);font-weight:600"></div>
       </section>
-
-      <div class="grid">
-        <div class="card">
-          <h4>Community Q&amp;A</h4>
-          <p><strong>Q:</strong> What is allowed in Donut Club?<br>
-          <strong>A:</strong> General discussion about software, apps, games, and tools. We do not condone illegal activity. Any requests for illegal hacking, stealing accounts, or bypassing systems are not allowed — moderators reserve the right to remove posts and ban users.</p>
-        </div>
-
-        <div class="card">
-          <h4>What you can expect</h4>
-          <p>Guides, tool recommendations, friendly help with development, curated app lists, and community events. We emphasize safety and respect: never share personal credentials or private information in public channels.</p>
-        </div>
-
-        <div class="card faq" id="faq">
-          <h4>Frequently Asked Questions</h4>
-
-          <div class="q" data-id="q1"><h5>How do I get the password?</h5></div>
-          <div class="a" id="a1">DM <strong>wen05275</strong> on Discord to request the password. Once you receive it, enter it in the box above to reveal the invite link.</div>
-
-          <div class="q" data-id="q2"><h5>Is content moderated?</h5></div>
-          <div class="a" id="a2">Yes — moderators monitor channels. Content that encourages illegal activity or violates Discord's terms will be removed and may result in bans.</div>
-
-          <div class="q" data-id="q3"><h5>Can I request a new channel?</h5></div>
-          <div class="a" id="a3">Yes — message an admin or DM <strong>wen05275</strong> with your suggestion. Popular requests are considered for creation.</div>
-
-          <div class="q" data-id="q4"><h5>What about privacy and downloads?</h5></div>
-          <div class="a" id="a4">We share curated links and tools, but always verify files yourself. Never share passwords or personal data in public channels. The server is not responsible for third-party files.</div>
-
-        </div>
-
-        <div class="card">
-          <h4>Quick tips</h4>
-          <p><span class="pill">Read #rules</span><span class="pill">Use proper channels</span><span class="pill">Respect members</span></p>
-          <p style="margin-top:8px;color:var(--muted)">If you need help, tag a moderator. For invites that stop working, DM <strong>wen05275</strong>.</p>
-        </div>
-      </div>
-
     </main>
 
-    <aside class="sidebar right" aria-label="About the server">
+    <aside class="sidebar right">
       <h4>About Donut Club</h4>
-      <p style="color:#dbe9ff;margin-top:6px">Donut Club is a private community where people share tips, tools, and discussion about apps, games and programming. We prioritize learning and ethical behavior.</p>
-
-      <h4 style="margin-top:12px">Server highlights</h4>
-      <ul style="color:var(--muted);padding-left:18px">
-        <li>Weekly app / tool highlights</li>
-        <li>Project collaboration channels</li>
-        <li>Giveaways and events</li>
-      </ul>
-
-      <h4 style="margin-top:12px">Contact</h4>
-      <p style="color:var(--muted)">DM <strong>wen05275</strong> for direct support, invite problems, or to report rule breaks.</p>
-
-      <hr style="margin-top:12px;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-      <p style="font-size:12px;color:var(--muted);margin-top:12px">Disclaimer: Donut Club does not support illegal activity. Use tools responsibly and within the law.</p>
+      <p style="color:#dbe9ff">Private Discord community for software, apps, games, and discussions. Stay safe and follow rules.</p>
     </aside>
   </div>
 
-  <footer>
-    © Donut Club — Private community. Password required to reveal invite link.
-    <div style="font-size:12px;color:var(--muted);margin-top:6px">This page is responsive and designed to work across modern devices and browsers (iOS, Android, Safari, Chrome, DuckDuckGo browser, Windows, macOS). To publish to GitHub Pages, place this file as <strong>index.html</strong> in your repository named <strong>Donut-Club-</strong> under the username <strong>math12393</strong>.</div>
-  </footer>
+  <footer>© Donut Club — Private community. Password required to reveal invite link.</footer>
 
   <script>
-    (function(){
-      // Show/hide password toggle + password invite logic
-      const CORRECT = 'cheese';
-      const pw = document.getElementById('pw');
-      const check = document.getElementById('check');
-      const reveal = document.getElementById('reveal');
-      const msg = document.getElementById('msg');
-      const linkbox = document.getElementById('linkbox');
-      const copyBtn = document.getElementById('copy');
-      const toggle = document.getElementById('togglePw');
+    const CORRECT_WORDS = ['cheese','Cheese','CHEESE'];
+    const pw = document.getElementById('pw');
+    const check = document.getElementById('check');
+    const reveal = document.getElementById('reveal');
+    const msg = document.getElementById('msg');
+    const toggle = document.getElementById('togglePw');
+    const copyBtn = document.getElementById('copy');
+    const linkbox = document.getElementById('linkbox');
 
-      function showMessage(t, color){ msg.textContent = t; msg.style.color = color || '#a5f3fc'; }
+    toggle.addEventListener('click', ()=>{
+      const isText = pw.type === 'text';
+      pw.type = isText ? 'password' : 'text';
+      toggle.textContent = isText ? '👁️' : '🙈';
+    });
 
-      // Toggle visibility of typed password
-      toggle.addEventListener('click', ()=>{
-        const isText = pw.type === 'text';
-        pw.type = isText ? 'password' : 'text';
-        toggle.setAttribute('aria-pressed', (!isText).toString());
-        toggle.title = isText ? 'Show password' : 'Hide password';
-        toggle.textContent = isText ? '👁️' : '🙈';
-      });
+    check.addEventListener('click', ()=>{
+      if(CORRECT_WORDS.includes(pw.value.trim())){
+        reveal.style.display = 'flex';
+        msg.textContent = 'Access granted — invite ready to copy.';
+        msg.style.color = '#a5f3fc';
+      } else {
+        msg.textContent = 'Incorrect password. DM wen05275 on Discord to get it.';
+        msg.style.color = 'tomato';
+        pw.value = '';
+        pw.focus();
+      }
+    });
 
-      function unlock(){ reveal.style.display = 'flex'; showMessage('Access granted — invite ready to copy.'); }
+    copyBtn.addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(linkbox.textContent); msg.textContent='Invite copied!'; } catch { alert('Copy manually.'); }
+    });
 
-      check.addEventListener('click', ()=>{
-        const val = pw.value.trim();
-        if(!val){ showMessage('Please enter the password.','orange'); return; }
-        if(val === CORRECT){ unlock(); }
-        else{ showMessage('Incorrect password. DM wen05275 on Discord to get it.','tomato'); pw.value=''; pw.focus(); }
-      });
-
-      pw.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') check.click(); });
-
-      copyBtn.addEventListener('click', async ()=>{
-        try{ await navigator.clipboard.writeText(linkbox.textContent.trim()); showMessage('Invite copied to clipboard!'); }
-        catch(err){ const range = document.createRange(); range.selectNodeContents(linkbox); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); try{ document.execCommand('copy'); showMessage('Invite copied to clipboard!'); }catch(e){ showMessage('Could not copy automatically — select the link and copy manually.','orange'); } }
-
-      // Ensure link is absolute so pasting into the URL bar works
-      // The link is already a full GitHub Pages URL.
-
-    })();
+    pw.addEventListener('keydown', e=>{if(e.key==='Enter') check.click();});
   </script>
 </body>
 </html>
