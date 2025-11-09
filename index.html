@@ -37,9 +37,9 @@
 
     /* FAQ accordion */
     .faq{margin-top:18px}
-    .q{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px;margin-bottom:8px;cursor:pointer}
+    .q{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px;margin-bottom:8px}
     .q h5{margin:0;font-size:15px}
-    .a{display:none;padding:10px 14px;color:var(--muted);font-size:14px}
+    .a{display:block;padding:10px 14px;color:var(--muted);font-size:14px}
 
     /* password area */
     .pw-area{margin-top:20px;display:flex;gap:12px;align-items:center}
@@ -55,10 +55,6 @@
 
     footer{padding:18px 32px;color:var(--muted);font-size:13px}
 
-    /* editable badges */
-    .editbar{display:flex;gap:8px;align-items:center}
-    .hidden{display:none}
-
     @media (max-width:980px){.layout{grid-template-columns:1fr;padding:10px}.sidebar{display:none}.right{display:none}}
   </style>
 </head>
@@ -67,47 +63,42 @@
     <div class="brand">
       <div class="logo">🍩</div>
       <div>
-        <div class="title" id="site-title">Donut Club</div>
-        <div style="font-size:12px;color:var(--muted)" id="site-sub">Private community — invite only</div>
+        <div class="title">Donut Club</div>
+        <div style="font-size:12px;color:var(--muted)">Private community — invite only</div>
       </div>
     </div>
     <nav>
       <a href="#faq">FAQ</a>
       <a href="#channels">Channels</a>
       <a href="#rules">Rules</a>
-      <div style="margin-left:12px" class="editbar">
-        <button id="ownerUnlock" class="btn">Owner: Unlock Edit</button>
-        <button id="saveBtn" class="btn hidden">Save</button>
-        <button id="exportBtn" class="btn hidden">Export HTML</button>
-      </div>
     </nav>
   </header>
 
   <div class="layout">
     <aside class="sidebar" id="channels" aria-label="Available channels">
-      <h3 contenteditable="false" id="channels-heading">Available channels</h3>
-      <ul class="channels" id="channels-list">
-        <li data-key="c1">hacking-and-programming-server <span>Code help, projects, dev chat</span></li>
-        <li data-key="c2">roblox-exploiting-server <span>Roblox community discussions</span></li>
-        <li data-key="c3">ipa-and-apk-file-installer-and-emulators <span>App installers & emulators</span></li>
-        <li data-key="c4">google-classroom <span>Classroom resources</span></li>
-        <li data-key="c5">free-robux <span>Giveaways & events</span></li>
-        <li data-key="c6">free-trusted-vpns <span>VPN recommendations</span></li>
-        <li data-key="c7">Interesting/Useful Apps/IPA/APKS <span>Curated apps</span></li>
-        <li data-key="c8">Exploiting (Call of Duty) <span>Game-related discussion</span></li>
-        <li data-key="c9">Exploiting (Chrome/Google websites) <span>Browser tips & tweaks</span></li>
-        <li data-key="c10">AI WITHOUT RESTRICTIONS/LIMITS <span>General AI discussion</span></li>
-        <li data-key="c11">How to have more storage in your devices <span>Storage tips & tools</span></li>
-        <li data-key="c12">ETC... <span>More topics added by request</span></li>
+      <h3>Available channels</h3>
+      <ul class="channels">
+        <li>hacking-and-programming-server <span>Code help, projects, dev chat</span></li>
+        <li>roblox-exploiting-server <span>Roblox community discussions</span></li>
+        <li>ipa-and-apk-file-installer-and-emulators <span>App installers & emulators</span></li>
+        <li>google-classroom <span>Classroom resources</span></li>
+        <li>free-robux <span>Giveaways & events</span></li>
+        <li>free-trusted-vpns <span>VPN recommendations</span></li>
+        <li>Interesting/Useful Apps/IPA/APKS <span>Curated apps</span></li>
+        <li>Exploiting (Call of Duty) <span>Game-related discussion</span></li>
+        <li>Exploiting (Chrome/Google websites) <span>Browser tips & tweaks</span></li>
+        <li>AI WITHOUT RESTRICTIONS/LIMITS <span>General AI discussion</span></li>
+        <li>How to have more storage in your devices <span>Storage tips & tools</span></li>
+        <li>ETC... <span>More topics added by request</span></li>
       </ul>
       <hr style="margin-top:12px;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-      <p style="font-size:13px;color:var(--muted);margin-top:12px" id="channels-note">Want a channel added? DM <strong>wen05275</strong> on Discord.</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px">Want a channel added? DM <strong>wen05275</strong> on Discord.</p>
     </aside>
 
     <main>
       <section class="hero">
-        <div class="h1" id="hero-title">Welcome to Donut Club</div>
-        <p id="hero-desc">Donut Club is a private Discord community focused on software, apps, game discussion and friendly help. To get the invite link you must obtain the password by DMing <strong>wen05275</strong> on Discord, then enter it below.</p>
+        <div class="h1">Welcome to Donut Club</div>
+        <p>Donut Club is a private Discord community focused on software, apps, game discussion and friendly help. To get the invite link you must obtain the password by DMing <strong>wen05275</strong> on Discord, then enter it below.</p>
 
         <div class="pw-area" style="margin-top:16px">
           <label for="pw" style="position:absolute;left:-9999px">Password</label>
@@ -121,14 +112,14 @@
 
       <div class="grid">
         <div class="card">
-          <h4 contenteditable="false" id="qa-title">Community Q&amp;A</h4>
-          <p id="qa-text"><strong>Q:</strong> What is allowed in Donut Club?<br>
-          <strong>A:</strong> General discussion about software, apps, games, and tools. We do <em>not</em> condone illegal activity. Any requests for illegal hacking, stealing accounts, or bypassing systems are not allowed — moderators reserve the right to remove posts and ban users.</p>
+          <h4>Community Q&amp;A</h4>
+          <p><strong>Q:</strong> What is allowed in Donut Club?<br>
+          <strong>A:</strong> General discussion about software, apps, games, and tools. We do not condone illegal activity. Any requests for illegal hacking, stealing accounts, or bypassing systems are not allowed — moderators reserve the right to remove posts and ban users.</p>
         </div>
 
         <div class="card">
-          <h4 contenteditable="false" id="expect-title">What you can expect</h4>
-          <p id="expect-text">Guides, tool recommendations, friendly help with development, curated app lists, and community events. We emphasize safety and respect: never share personal credentials or private information in public channels.</p>
+          <h4>What you can expect</h4>
+          <p>Guides, tool recommendations, friendly help with development, curated app lists, and community events. We emphasize safety and respect: never share personal credentials or private information in public channels.</p>
         </div>
 
         <div class="card faq" id="faq">
@@ -158,18 +149,18 @@
     </main>
 
     <aside class="sidebar right" aria-label="About the server">
-      <h4 contenteditable="false" id="about-title">About Donut Club</h4>
-      <p style="color:#dbe9ff;margin-top:6px" id="about-text">Donut Club is a private community where people share tips, tools, and discussion about apps, games and programming. We prioritize learning and ethical behavior.</p>
+      <h4>About Donut Club</h4>
+      <p style="color:#dbe9ff;margin-top:6px">Donut Club is a private community where people share tips, tools, and discussion about apps, games and programming. We prioritize learning and ethical behavior.</p>
 
       <h4 style="margin-top:12px">Server highlights</h4>
-      <ul style="color:var(--muted);padding-left:18px" id="highlights-list">
+      <ul style="color:var(--muted);padding-left:18px">
         <li>Weekly app / tool highlights</li>
         <li>Project collaboration channels</li>
         <li>Giveaways and events</li>
       </ul>
 
       <h4 style="margin-top:12px">Contact</h4>
-      <p style="color:var(--muted)" id="contact-txt">DM <strong>wen05275</strong> for direct support, invite problems, or to report rule breaks.</p>
+      <p style="color:var(--muted)">DM <strong>wen05275</strong> for direct support, invite problems, or to report rule breaks.</p>
 
       <hr style="margin-top:12px;border:none;border-top:1px solid rgba(255,255,255,0.03)">
       <p style="font-size:12px;color:var(--muted);margin-top:12px">Disclaimer: Donut Club does not support illegal activity. Use tools responsibly and within the law.</p>
@@ -178,78 +169,12 @@
 
   <footer>
     © Donut Club — Private community. Password required to reveal invite link.
-    <div style="font-size:12px;color:var(--muted);margin-top:6px">This page is responsive and designed to work across modern devices and browsers (iOS, Android, Safari, Chrome, DuckDuckGo browser, Windows, macOS). For true access control and sharing, host this file on your GitHub Pages at: https://math12393.github.io/Donut-Club-/</div>
+    <div style="font-size:12px;color:var(--muted);margin-top:6px">This page is responsive and designed to work across modern devices and browsers (iOS, Android, Safari, Chrome, DuckDuckGo browser, Windows, macOS). To publish to GitHub Pages, place this file as <strong>index.html</strong> in your repository named <strong>Donut-Club-</strong> under the username <strong>math12393</strong>.</div>
   </footer>
 
   <script>
     (function(){
-      // OWNER UNLOCK: client-side edit mode protected by owner key
-      // NOTE: client-side protection is not secure server-side. For true exclusive editing, update the GitHub repo directly.
-      const OWNER_KEY = 'wen05275'; // owner unlock code (use your Discord username)
-      const ownerBtn = document.getElementById('ownerUnlock');
-      const saveBtn = document.getElementById('saveBtn');
-      const exportBtn = document.getElementById('exportBtn');
-      const editableIds = ['site-title','site-sub','channels-heading','channels-list','channels-note','hero-title','hero-desc','qa-title','qa-text','expect-title','expect-text','about-title','about-text','highlights-list','contact-txt'];
-
-      function setEditable(on){
-        editableIds.forEach(id=>{
-          const el = document.getElementById(id);
-          if(!el) return;
-          el.contentEditable = on;
-          if(on) el.classList.add('editing'); else el.classList.remove('editing');
-        });
-        document.querySelectorAll('.channels li').forEach(li=> li.contentEditable = on);
-      }
-
-      function showEditingUI(on){
-        if(on){ saveBtn.classList.remove('hidden'); exportBtn.classList.remove('hidden'); ownerBtn.textContent = 'Owner: Editing (locked)'; }
-        else{ saveBtn.classList.add('hidden'); exportBtn.classList.add('hidden'); ownerBtn.textContent = 'Owner: Unlock Edit'; }
-      }
-
-      function loadSaved(){
-        try{
-          const saved = localStorage.getItem('donut_club_saved');
-          if(!saved) return;
-          const data = JSON.parse(saved);
-          editableIds.forEach(id=>{ if(data[id]) document.getElementById(id).innerHTML = data[id]; });
-          if(data['channels-list']) document.getElementById('channels-list').innerHTML = data['channels-list'];
-          if(data['highlights-list']) document.getElementById('highlights-list').innerHTML = data['highlights-list'];
-        }catch(e){ console.warn('Could not load saved content', e); }
-      }
-
-      function saveToLocal(){
-        const data = {};
-        editableIds.forEach(id=>{ const el = document.getElementById(id); if(el) data[id] = el.innerHTML; });
-        data['channels-list'] = document.getElementById('channels-list').innerHTML;
-        data['highlights-list'] = document.getElementById('highlights-list').innerHTML;
-        localStorage.setItem('donut_club_saved', JSON.stringify(data));
-        alert('Saved locally in your browser (only you).');
-      }
-
-      function exportHTML(){
-        // export current DOM as an HTML file the owner can upload to GitHub Pages
-        const docType = '<!DOCTYPE html>';
-        const content = docType + '\n' + document.documentElement.outerHTML;
-        const blob = new Blob([content], {type: 'text/html'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a'); a.href = url; a.download = 'Donut-Club-index.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-      }
-
-      ownerBtn.addEventListener('click', ()=>{
-        if(ownerBtn.dataset.unlocked === 'true'){
-          // lock again
-          ownerBtn.dataset.unlocked = 'false'; setEditable(false); showEditingUI(false);
-          return;
-        }
-        const code = prompt('Enter owner unlock code:');
-        if(code === OWNER_KEY){ ownerBtn.dataset.unlocked = 'true'; setEditable(true); showEditingUI(true); alert('Edit mode unlocked — changes are saved only to your browser until you export and publish to GitHub Pages.'); }
-        else alert('Incorrect owner code.');
-      });
-
-      saveBtn.addEventListener('click', saveToLocal);
-      exportBtn.addEventListener('click', exportHTML);
-
-      // password invite logic
+      // Simplified: no editing, FAQ answers visible by default
       const CORRECT = 'cheese';
       const pw = document.getElementById('pw');
       const check = document.getElementById('check');
@@ -257,28 +182,25 @@
       const msg = document.getElementById('msg');
       const linkbox = document.getElementById('linkbox');
       const copyBtn = document.getElementById('copy');
+
       function showMessage(t, color){ msg.textContent = t; msg.style.color = color || '#a5f3fc'; }
       function unlock(){ reveal.style.display = 'flex'; showMessage('Access granted — invite ready to copy.'); }
-      check.addEventListener('click', ()=>{ const val = pw.value.trim(); if(!val){ showMessage('Please enter the password.','orange'); return; } if(val === CORRECT){ unlock(); } else{ showMessage('Incorrect password. DM wen05275 on Discord to get it.','tomato'); pw.value=''; pw.focus(); } });
+
+      check.addEventListener('click', ()=>{
+        const val = pw.value.trim();
+        if(!val){ showMessage('Please enter the password.','orange'); return; }
+        if(val === CORRECT){ unlock(); }
+        else{ showMessage('Incorrect password. DM wen05275 on Discord to get it.','tomato'); pw.value=''; pw.focus(); }
+      });
+
       pw.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') check.click(); });
-      copyBtn.addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText(linkbox.textContent.trim()); showMessage('Invite copied to clipboard!'); }catch(err){ const range = document.createRange(); range.selectNodeContents(linkbox); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); try{ document.execCommand('copy'); showMessage('Invite copied to clipboard!'); }catch(e){ showMessage('Could not copy automatically — select the link and copy manually.','orange'); } } });
 
-      // FAQ accordion behavior
-      const qs = document.querySelectorAll('.q');
-      qs.forEach(q=>q.addEventListener('click', ()=>{ const next = q.nextElementSibling; const open = next.style.display === 'block'; document.querySelectorAll('.a').forEach(a=>a.style.display='none'); if(!open) next.style.display = 'block'; }));
+      copyBtn.addEventListener('click', async ()=>{
+        try{ await navigator.clipboard.writeText(linkbox.textContent.trim()); showMessage('Invite copied to clipboard!'); }
+        catch(err){ const range = document.createRange(); range.selectNodeContents(linkbox); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range); try{ document.execCommand('copy'); showMessage('Invite copied to clipboard!'); }catch(e){ showMessage('Could not copy automatically — select the link and copy manually.','orange'); } }
 
-      // on load: attempt to load saved edits
-      loadSaved();
-
-      // accessibility tip: if on mobile, show short help
-      if(/Mobi|Android/i.test(navigator.userAgent)){
-        console.log('Mobile device detected — responsive layout active.');
-      }
-
-      // Make sure contenteditable elements don't break keyboard navigation
-      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && ownerBtn.dataset.unlocked === 'true'){ ownerBtn.click(); } });
-
-      // NOTE: client-side "owner" unlocking is only convenience. To truly make the page editable by you only, push changes to your GitHub repo and host via Pages at the URL provided.
+      // Make sure the invite link is absolute and works when pasted into browser address bar.
+      // The linkbox already contains the full GitHub Pages URL.
 
     })();
   </script>
