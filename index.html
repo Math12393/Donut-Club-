@@ -1,157 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donut Club — Welcome</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#071022;--card:#071823;--accent:#ffcc66;--muted:#9fb0c9}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:#e6eef8;background:linear-gradient(180deg,#04101a 0%, #071226 60%, #031018 100%);}
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 32px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand .logo{font-size:22px;font-weight:800;color:var(--accent)}
-    .brand .title{font-weight:700}
-    nav{display:flex;gap:12px;align-items:center}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
-    nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
-
-    .layout{display:grid;grid-template-columns:280px 1fr 320px;gap:20px;padding:10px 32px 48px}
-
-    .sidebar{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;color:var(--muted);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    .sidebar h3{margin:0 0 10px 0;color:var(--accent);font-size:16px}
-    .channels{list-style:none;padding:0;margin:0}
-    .channels li{padding:10px;margin-bottom:8px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);font-weight:600}
-    .channels li span{display:block;font-size:12px;color:var(--muted);font-weight:400}
-
-    main{min-height:60vh}
-    .hero{background:linear-gradient(90deg, rgba(255,204,102,0.03), rgba(255,255,255,0.01));padding:28px;border-radius:14px}
-    .hero .h1{font-size:32px;font-weight:800;color:var(--accent)}
-    .hero p{color:#dbe9ff;margin-top:6px}
-
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
-    .card h4{margin:0 0 10px 0;color:var(--accent)}
-    .card p{margin:0;color:var(--muted);line-height:1.45}
-
-    .faq{margin-top:18px}
-    .q{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px;margin-bottom:8px}
-    .q h5{margin:0;font-size:15px}
-    .a{display:block;padding:10px 14px;color:var(--muted);font-size:14px}
-
-    .pw-area{margin-top:20px;display:flex;gap:8px;align-items:center}
-    .pw-wrapper{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.01);padding:6px;border-radius:10px}
-    input[type="password"], input[type="text"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf4ff;min-width:220px;font-size:15px}
-    .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#08101a;font-weight:700;cursor:pointer}
-    .toggle-btn{background:transparent;border:0;color:var(--muted);padding:6px;border-radius:6px;cursor:pointer}
-
-    .invite{margin-top:12px;display:none;align-items:center;gap:8px}
-    .linkbox{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:#dbe9ff;display:inline-block}
-
-    .right h4{color:var(--accent)}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);margin:6px 6px 6px 0;font-weight:700}
-
-    footer{padding:18px 32px;color:var(--muted);font-size:13px}
-
-    @media (max-width:980px){.layout{grid-template-columns:1fr;padding:10px}.sidebar{display:none}.right{display:none}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donut Club — Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071022;--card:#071823;--accent:#ffcc66;--muted:#9fb0c9}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:#e6eef8;background:linear-gradient(180deg,#04101a 0%, #071226 60%, #031018 100%);}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 32px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand .logo{font-size:22px;font-weight:800;color:var(--accent)}
+.brand .title{font-weight:700}
+nav{display:flex;gap:12px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+.layout{display:grid;grid-template-columns:280px 1fr 320px;gap:20px;padding:10px 32px 48px}
+.sidebar{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;color:var(--muted);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.sidebar h3{margin:0 0 10px 0;color:var(--accent);font-size:16px}
+.channels{list-style:none;padding:0;margin:0}
+.channels li{padding:10px;margin-bottom:8px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);font-weight:600}
+.channels li span{display:block;font-size:12px;color:var(--muted);font-weight:400}
+main{min-height:60vh}
+.hero{background:linear-gradient(90deg, rgba(255,204,102,0.03), rgba(255,255,255,0.01));padding:28px;border-radius:14px}
+.hero .h1{font-size:32px;font-weight:800;color:var(--accent)}
+.hero p{color:#dbe9ff;margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
+.card h4{margin:0 0 10px 0;color:var(--accent)}
+.card p{margin:0;color:var(--muted);line-height:1.45}
+.faq{margin-top:18px}
+.q{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px;margin-bottom:8px}
+.q h5{margin:0;font-size:15px}
+.a{display:block;padding:10px 14px;color:var(--muted);font-size:14px}
+.pw-area{margin-top:20px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pw-wrapper{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.01);padding:6px;border-radius:10px}
+input[type="password"], input[type="text"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#eaf4ff;min-width:220px;font-size:15px}
+.btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#08101a;font-weight:700;cursor:pointer}
+.toggle-btn{background:transparent;border:0;color:var(--muted);padding:6px;border-radius:6px;cursor:pointer}
+.invite{margin-top:12px;display:none;align-items:center;gap:8px}
+.linkbox{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:#dbe9ff;display:inline-block;word-break:break-all}
+.right h4{color:var(--accent)}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);margin:6px 6px 6px 0;font-weight:700}
+footer{padding:18px 32px;color:var(--muted);font-size:13px}
+@media (max-width:980px){.layout{grid-template-columns:1fr;padding:10px}.sidebar{display:none}.right{display:none}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">🍩</div>
-      <div>
-        <div class="title">Donut Club</div>
-        <div style="font-size:12px;color:var(--muted)">Private community — invite only</div>
+<audio autoplay loop id="bgMusic">
+  <source src="https://cdn.jsdelivr.net/gh/math12393/phonk-sample/phonk.mp3" type="audio/mpeg">
+</audio>
+<header>
+  <div class="brand">
+    <div class="logo">🍩</div>
+    <div><div class="title">Donut Club</div><div style="font-size:12px;color:var(--muted)">Private community — invite only</div></div>
+  </div>
+  <nav>
+    <a href="#faq">FAQ</a>
+    <a href="#channels">Channels</a>
+  </nav>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="channels">
+    <h3>Available channels</h3>
+    <ul class="channels">
+      <li>hacking-and-programming-server <span>Code help, projects, dev chat</span></li>
+      <li>roblox-exploiting-server <span>Roblox community discussions</span></li>
+      <li>ipa-and-apk-file-installer-and-emulators <span>App installers & emulators</span></li>
+      <li>google-classroom <span>Classroom resources</span></li>
+      <li>free-robux <span>Giveaways & events</span></li>
+      <li>free-trusted-vpns <span>VPN recommendations</span></li>
+      <li>Interesting/Useful Apps/IPA/APKS <span>Curated apps</span></li>
+      <li>Exploiting (Call of Duty) <span>Game-related discussion</span></li>
+      <li>Exploiting (Chrome/Google websites) <span>Browser tips & tweaks</span></li>
+      <li>AI WITHOUT RESTRICTIONS/LIMITS <span>General AI discussion</span></li>
+      <li>How to have more storage in your devices <span>Storage tips & tools</span></li>
+      <li>ETC... <span>More topics added by request</span></li>
+    </ul>
+  </aside>
+  <main>
+    <section class="hero">
+      <div class="h1">Welcome to Donut Club</div>
+      <p>Enter the password below to reveal the invite link.</p>
+      <div class="pw-area">
+        <div class="pw-wrapper">
+          <input id="pw" type="password" placeholder="Enter password here" autocomplete="off">
+          <button id="togglePw" class="toggle-btn" title="Show password">👁️</button>
+          <button id="check" class="btn">Enter</button>
+        </div>
+        <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
+      </div>
+      <div id="msg" style="margin-top:12px;color:var(--muted);font-weight:600"></div>
+    </section>
+    <div class="grid">
+      <div class="card faq" id="faq">
+        <h4>Frequently Asked Questions</h4>
+        <div class="q"><h5>How do I get the password?</h5></div>
+        <div class="a">DM wen05275 on Discord to request the password. Enter it above to reveal the invite link.</div>
+        <div class="q"><h5>Is content moderated?</h5></div>
+        <div class="a">Moderators monitor channels. Illegal or harmful content will be removed.</div>
+        <div class="q"><h5>Can I request a new channel?</h5></div>
+        <div class="a">Yes, DM suggestions to admins.</div>
+        <div class="q"><h5>Privacy and downloads?</h5></div>
+        <div class="a">We share curated links, verify before downloading, never share personal info publicly.</div>
       </div>
     </div>
-    <nav>
-      <a href="#faq">FAQ</a>
-      <a href="#channels">Channels</a>
-      <a href="#rules">Rules</a>
-    </nav>
-  </header>
+  </main>
+  <aside class="sidebar right">
+    <h4>About Donut Club</h4>
+    <p style="color:#dbe9ff">Private Discord community for apps, games, and dev discussion. Stay safe and follow rules.</p>
+  </aside>
+</div>
+<footer>© Donut Club — Password required to reveal invite link.</footer>
+<script>
+const CORRECT_WORDS=['cheese','Cheese','CHEESE'];
+const pw=document.getElementById('pw');
+const check=document.getElementById('check');
+const reveal=document.getElementById('reveal');
+const msg=document.getElementById('msg');
+const toggle=document.getElementById('togglePw');
+const copyBtn=document.getElementById('copy');
+const linkbox=document.getElementById('linkbox');
 
-  <div class="layout">
-    <aside class="sidebar" id="channels">
-      <h3>Available channels</h3>
-      <ul class="channels">
-        <li>hacking-and-programming-server <span>Code help, projects, dev chat</span></li>
-        <li>roblox-exploiting-server <span>Roblox community discussions</span></li>
-        <li>ipa-and-apk-file-installer-and-emulators <span>App installers & emulators</span></li>
-        <li>google-classroom <span>Classroom resources</span></li>
-        <li>free-robux <span>Giveaways & events</span></li>
-        <li>free-trusted-vpns <span>VPN recommendations</span></li>
-        <li>Interesting/Useful Apps/IPA/APKS <span>Curated apps</span></li>
-        <li>Exploiting (Call of Duty) <span>Game-related discussion</span></li>
-        <li>Exploiting (Chrome/Google websites) <span>Browser tips & tweaks</span></li>
-        <li>AI WITHOUT RESTRICTIONS/LIMITS <span>General AI discussion</span></li>
-        <li>How to have more storage in your devices <span>Storage tips & tools</span></li>
-        <li>ETC... <span>More topics added by request</span></li>
-      </ul>
-    </aside>
-
-    <main>
-      <section class="hero">
-        <div class="h1">Welcome to Donut Club</div>
-        <p>To get the invite link, enter the password below (you can get it by DMing <strong>wen05275</strong> on Discord).</p>
-
-        <div class="pw-area">
-          <div class="pw-wrapper">
-            <input id="pw" type="password" placeholder="Enter password here" autocomplete="off" />
-            <button id="togglePw" class="toggle-btn" title="Show password">👁️</button>
-            <button id="check" class="btn">Enter</button>
-          </div>
-          <div class="invite" id="reveal"><div class="linkbox" id="linkbox">https://math12393.github.io/Donut-Club-/</div><button id="copy" class="btn">Copy Link</button></div>
-        </div>
-        <div id="msg" style="margin-top:12px;color:var(--muted);font-weight:600"></div>
-      </section>
-    </main>
-
-    <aside class="sidebar right">
-      <h4>About Donut Club</h4>
-      <p style="color:#dbe9ff">Private Discord community for software, apps, games, and discussions. Stay safe and follow rules.</p>
-    </aside>
-  </div>
-
-  <footer>© Donut Club — Private community. Password required to reveal invite link.</footer>
-
-  <script>
-    const CORRECT_WORDS = ['cheese','Cheese','CHEESE'];
-    const pw = document.getElementById('pw');
-    const check = document.getElementById('check');
-    const reveal = document.getElementById('reveal');
-    const msg = document.getElementById('msg');
-    const toggle = document.getElementById('togglePw');
-    const copyBtn = document.getElementById('copy');
-    const linkbox = document.getElementById('linkbox');
-
-    toggle.addEventListener('click', ()=>{
-      const isText = pw.type === 'text';
-      pw.type = isText ? 'password' : 'text';
-      toggle.textContent = isText ? '👁️' : '🙈';
-    });
-
-    check.addEventListener('click', ()=>{
-      if(CORRECT_WORDS.includes(pw.value.trim())){
-        reveal.style.display = 'flex';
-        msg.textContent = 'Access granted — invite ready to copy.';
-        msg.style.color = '#a5f3fc';
-      } else {
-        msg.textContent = 'Incorrect password. DM wen05275 on Discord to get it.';
-        msg.style.color = 'tomato';
-        pw.value = '';
-        pw.focus();
-      }
-    });
-
-    copyBtn.addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(linkbox.textContent); msg.textContent='Invite copied!'; } catch { alert('Copy manually.'); }
-    });
-
-    pw.addEventListener('keydown', e=>{if(e.key==='Enter') check.click();});
-  </script>
+toggle.addEventListener('click',()=>{const isText=pw.type==='text';pw.type=isText?'password':'text';toggle.textContent=isText?'👁️':'🙈';});
+check.addEventListener('click',()=>{if(CORRECT_WORDS.includes(pw.value.trim())){reveal.style.display='flex';msg.textContent='Access granted — invite ready to copy.';msg.style.color='#a5f3fc';}else{msg.textContent='Incorrect password. DM wen05275 on Discord to get it.';msg.style.color='tomato';pw.value='';pw.focus();}});
+pw.addEventListener('keydown',e=>{if(e.key==='Enter')check.click();});
+copyBtn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(linkbox.textContent);msg.textContent='Invite copied!';}catch{alert('Copy manually.');}});
+</script>
 </body>
 </html>
